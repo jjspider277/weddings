@@ -1,0 +1,22 @@
+/* here you can put your own css to customize and override the theme */
+
+.select2-container-multi .select2-choices .select2-search-choice {
+    background-image: linear-gradient(to top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%); !important;
+}
+
+.datatable_detail_element
+{
+    background-color: #FFFFFF !important;
+}
+.datatable_detail_table
+{
+    border: 1px solid #ddd !important;
+}
+.dataTable .datatable_detail_table td, .dataTable .datatable_detail_table th {
+    border: 1px solid #ddd !important;
+    padding: 4px;
+}
+.dataTable .datatable_detail_element td, .dataTable .datatable_detail_element th {
+    border: 0px none;
+    padding: 4px;
+}

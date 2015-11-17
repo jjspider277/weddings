@@ -1,0 +1,8 @@
+
+home_page:
+    pattern:  /prueba
+    defaults: { _controller: ComunBundle:Default:read}
+#--------------COMPONENTES---------------------#
+
+
+#-------------- END COMPONENTES-----------------SS #

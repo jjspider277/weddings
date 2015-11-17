@@ -1,0 +1,11 @@
+<li>
+    <a href="javascript:;">
+        <i class="fa fa-cogs"></i>
+                                        <span class="title">
+                                            {{ menu.denominacion }}
+                                        </span>
+                                        <span class="arrow">
+                                        </span>
+    </a>
+    {{ include('ComunBundle:architecture/templates:left_sub_menu.html.twig',{'menus':menu.hijos}) }}
+</li>

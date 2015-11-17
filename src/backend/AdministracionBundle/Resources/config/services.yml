@@ -1,0 +1,3 @@
+services:
+    admin.tipoparticipante.tm:
+        class:  backend\AdministracionBundle\TableDescription\TipoParticipanteTable

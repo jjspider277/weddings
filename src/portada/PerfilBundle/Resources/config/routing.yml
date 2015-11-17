@@ -1,0 +1,3 @@
+perfil_homepage:
+    path:     /
+    defaults: { _controller: PerfilBundle:Default:index }

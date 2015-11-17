@@ -1,0 +1,25 @@
+administracion_homepage:
+    path:     /homepage
+    defaults: { _controller: AdministracionBundle:Default:index }
+
+#---------------------Tipo Participante------------------------
+administracion_crud_tipoparticipante:
+    pattern:  /tipoparticipante
+    defaults: { _controller: AdministracionBundle:TipoParticipante:main }
+
+administracion_crud_tipoparticipante_listAjax:
+    pattern:  /tipoparticipante/list
+    defaults: { _controller: AdministracionBundle:TipoParticipante:listAjax}
+
+
+administracion_crud_tipoparticipante_edit:
+    pattern:  /tipoparticipante/edit
+    defaults: { _controller: AdministracionBundle:TipoParticipante:edit}
+
+administracion_crud_tipoparticipante_new:
+    pattern:  /tipoparticipante/new
+    defaults: { _controller: AdministracionBundle:TipoParticipante:new}
+
+administracion_crud_tipoparticipante_delete:
+    pattern:  /tipoparticipante/delete
+    defaults: { _controller: AdministracionBundle:TipoParticipante:delete }

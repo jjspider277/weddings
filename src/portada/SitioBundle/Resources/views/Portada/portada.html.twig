@@ -1,0 +1,104 @@
+{% extends '::base.html.twig' %}
+{% block content %}
+<div>
+    <div class="row form-group text-center">
+        <div class="col-md-12">
+
+            <img class="for_center_in_page_content" src="{{ asset('bundles/sitio/images/banner.jpg') }}" style="width:25%">
+        </div>
+    </div>
+    {#DIV que se esconde y se raliza la busqueda avanzada#}
+    <div id="effect" class="text-center" style="display: none;">
+        <h3 class="ui-widget-header ui-corner-all">Toggle</h3>
+        <p>
+            Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.
+        </p>
+        <div class="row form-group text-center control-btn-ba">
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <div class="input-icon right">
+                        <i class=""></i>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <button type="submit" class="btn green"> Buscar</button>
+                    <button id="button-close-ba" type="button" class="btn default">Cerrar</button>
+                </div>
+                <div class="col-md-2">
+                    <div class="input-icon right">
+                        <i class=""></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form-group text-center">
+        <div class=" text-center">
+            <div class="col-md-3">
+                <div class="input-icon right">
+                    <i class=""></i>
+                </div>
+            </div>
+            <div class="col-md-6 barra-busqueda">
+                <div class="input-icon right">
+                    <i class="fa fa-search"></i>
+                    <input type="text" class="form-control" placeholder="Criterio de busqueda">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-icon right">
+                    <i class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">        </div>
+    <div class="row form-group text-center control-btn">
+        <div class="col-md-12">
+            <div class="col-md-2">
+                <div class="input-icon right">
+                    <i class=""></i>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <button type="submit" class="btn green"> Buscar</button>
+                <button id="button-BA" type="button" class="btn default">Busqueda Avanzada</button>
+            </div>
+            <div class="col-md-2">
+                <div class="input-icon right">
+                    <i class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+    <script>
+        $(function() {
+            function runEffect() {
+                var selectedEffect = "blind";
+                var options = {};
+                if ( selectedEffect === "scale" ) {
+                    options = { percent: 0 };
+                } else if ( selectedEffect === "size" ) {
+                    options = { to: { width: 200, height: 60 } };
+                }
+                $( "#effect" ).toggle( selectedEffect, options, 0 );
+            };
+            $( "#button-BA" ).click(function() {
+                runEffect();
+                $(".control-btn").addClass("hidden");
+                $(".barra-busqueda").addClass("hidden");
+                return false;
+            });
+            $( "#button-close-ba" ).click(function() {
+                runEffect();
+                $(".control-btn").removeClass("hidden");
+                $(".barra-busqueda").removeClass("hidden");
+                return false;
+
+            });
+        });
+    </script>
+{% endblock %}

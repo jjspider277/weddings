@@ -1,0 +1,28 @@
+.heart-content-style {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #6e6e86 -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-style: solid none none;
+    border-width: 1px 0 0;
+    color: #d65679;
+    margin: 2% auto;
+    padding: 0;
+    text-align: center;
+    width: 10%;
+}
+.heart-content-style i {
+    background: #fff none repeat scroll 0 0;
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    position: relative;
+    top: -0.5em;
+}
+.c-page-on-scroll .c-layout-header.c-layout-header-default {
+    background: rgba(214, 86, 121,1) none repeat scroll 0 0;
+    border-bottom: 0 none;
+    box-shadow: none;
+}

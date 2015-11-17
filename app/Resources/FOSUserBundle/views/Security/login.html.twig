@@ -1,0 +1,104 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+<div class="logo">
+    {% block logo %}
+        <img src="{{ asset('bundles/comun/img/facdyc2.png') }}" style="height: 10em;"/>
+    {% endblock %}
+</div>
+
+
+<form  class="login-form" action="{{ path("fos_user_security_check") }}" method="post">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% if error %}
+        <div class="alert alert-danger display-show">
+            <button class="close" data-dismiss="alert"></button>
+                <span>
+                     {{ error|trans({}, 'FOSUserBundle') }}
+                </span>
+        </div>
+    {% endif %}
+
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+        <div class="input-icon">
+            <i class="fa fa-user"></i>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" id="username" name="_username" required="required"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" id="password" name="_password" required="required"/>
+        </div>
+    </div>
+
+    {#<div class="forget-password">#}
+        {#<h4>&iquest;Olvidó su contraseña?</h4>#}
+        {#<p>#}
+             {#Click#}
+            {#<a href="javascript:;" id="forget-password">#}
+                {#aquí#}
+            {#</a>#}
+            {#para restablecer su contraseña.#}
+        {#</p>#}
+    {#</div>#}
+    {#<div class="create-account">#}
+        {#<p>#}
+            {#&iquest;No tiene una cuenta todav&iacute;a?&nbsp;#}
+            {#<a href="javascript:;" id="register-btn">#}
+                {#Crear nueva cuenta#}
+            {#</a>#}
+        {#</p>#}
+    {#</div>#}
+    <div class="form-actions">
+        <button type="submit" id="_submit" name="_submit" class="btn green pull-right">
+            {{ 'security.login.submit'|trans({}, 'FOSUserBundle') }} <i class="m-icon-swapright m-icon-white"></i>
+        </button>
+    </div>
+</form>
+    {#<form class="register-form" action="{{ path('fos_user_registration_register') }}" method="post">#}
+    {#<h3>Registrar usuario</h3>#}
+    {#<p>#}
+        {#Introduzca su informaci&oacute;n personal:#}
+    {#</p>#}
+
+        {#&#123;&#35;{{ form_mrow(form.cedula,{'attr':{'placeholder':'Cédula:'}}) }}&#35;&#125;#}
+
+        {#{{ form_mrow(form.nombre,{'attr':{'placeholder':'Nombre(s):'}}) }}#}
+
+        {#{{ form_mrow(form.apellidos,{'attr':{'placeholder':'Apellidos:'}}) }}#}
+
+        {#&#123;&#35;{{ form_mrow(form.direccion,{'attr':{'placeholder':'Dirección:'}}) }}&#35;&#125;#}
+
+        {#{{ form_mrow(form.email,{'attr':{'placeholder':'form.email'|trans({}, 'FOSUserBundle')}}) }}#}
+    {#<p>#}
+        {#Introduzca los detalles de su cuenta:#}
+    {#</p>#}
+        {#{{ form_mrow(form.username,{'attr':{'placeholder':'security.login.username'|trans({}, 'FOSUserBundle')}}) }}#}
+        {#{{ form_mrow(form.plainPassword.first,{'attr':{'placeholder':'security.login.password'|trans({}, 'FOSUserBundle')}}) }}#}
+        {#{{ form_mrow(form.plainPassword.second,{'attr':{'placeholder':'form.password_confirmation'|trans({}, 'FOSUserBundle')}}) }}#}
+        {#{{ form_widget(form._token) }}#}
+    {#&#123;&#35;<input type="hidden" value="{{ csrf_token }}" id="{{ form._token.vars['id'] }}" name="{{ form._token.vars['full_name'] }}"/>&#35;&#125;#}
+    {#&#123;&#35;<div class="form-group">&#35;&#125;#}
+        {#&#123;&#35;<div id="register_tnc_error">&#35;&#125;#}
+        {#&#123;&#35;</div>&#35;&#125;#}
+    {#&#123;&#35;</div>&#35;&#125;#}
+    {#<div class="form-actions">#}
+        {#<button id="register-back-btn" type="button" class="btn default">#}
+            {#<i class="m-icon-swapleft "></i> Atr&aacute;s </button>#}
+        {#<button type="submit" id="register-submit-btn" class="btn green pull-right">#}
+            {#{{ 'layout.register'|trans({}, 'FOSUserBundle') }} <i class="m-icon-swapright m-icon-white"></i>#}
+        {#</button>#}
+    {#</div>#}
+    {#</form>#}
+{% endblock fos_user_content %}
+{% block javascript %}
+<script>
+//    jQuery(document).ready(function() {
+//        $($('#fos_user_registration_form_username').parent().children()[0]).removeClass('fa-font').addClass('fa-user');
+//    });
+</script>
+{% endblock %}

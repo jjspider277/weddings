@@ -1,0 +1,6 @@
+sitio_homepage:
+    pattern:  /portada
+    defaults: { _controller: SitioBundle:Portada:portada}
+sitio_homepage_:
+    pattern:  /
+    defaults: { _controller: SitioBundle:Portada:portada}
